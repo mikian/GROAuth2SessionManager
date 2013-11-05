@@ -10,23 +10,23 @@ Pod::Spec.new do |s|
   s.source_files = 'GROAuth2SessionManager'
   s.requires_arc = true
 
-  s.ios.deployment_target = '7.0'
-  s.osx.deployment_target = '10.9'
+  s.ios.deployment_target = '6.0'
+  s.osx.deployment_target = '10.8'
 
   s.dependency 'AFNetworking', '~> 2.0.0'
-
-  s.ios.frameworks = 'Security'
-
-  s.prefix_header_contents = <<-EOS
-#ifdef __OBJC__
-  #import <Security/Security.h>
-  #if __IPHONE_OS_VERSION_MIN_REQUIRED
-    #import <SystemConfiguration/SystemConfiguration.h>
-    #import <MobileCoreServices/MobileCoreServices.h>
-  #else
-    #import <SystemConfiguration/SystemConfiguration.h>
-    #import <CoreServices/CoreServices.h>
-  #endif
-#endif /* __OBJC__*/
-EOS
+# 
+#   s.ios.frameworks = 'Security'
+# 
+#   s.prefix_header_contents = <<-EOS
+# #ifdef __OBJC__
+#   #import <Security/Security.h>
+#   #if __IPHONE_OS_VERSION_MIN_REQUIRED
+#     #import <SystemConfiguration/SystemConfiguration.h>
+#     #import <MobileCoreServices/MobileCoreServices.h>
+#   #else
+#     #import <SystemConfiguration/SystemConfiguration.h>
+#     #import <CoreServices/CoreServices.h>
+#   #endif
+# #endif /* __OBJC__*/
+# EOS
 end
